@@ -32,7 +32,9 @@
 
     </div>
     <div class="blog-text">
-      <span>BL</span><span>OG</span>
+      <RouterLink to="/menu">
+        <span>BL</span><span>OG</span>
+      </RouterLink>
     </div>
   </main>
   <footer>
