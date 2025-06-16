@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>
+    Hello, This is the ChernBLog Home Page!
+  </h1>
 </template>
+
+<style>
+h1{
+  text-align: center;
+}
+</style>
