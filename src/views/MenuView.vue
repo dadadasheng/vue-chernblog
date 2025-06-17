@@ -2,13 +2,15 @@
 
 </script>
 <template>
-    <main class="wobble-hor-bottom" >
-        <img src="../assets/img/chernHao_blog_logo_2@3x.png" alt="">
+    <main class="" >
+        <img class="whole_logo" src="../assets/img/chernHao_blog_logo_4_whole.png" alt="">
+        <!-- <img src="../assets/img/chernHao_blog_logo_4_top.png" alt="">
+        <img src="../assets/img/chernHao_blog_logo_4_bottom.png" alt=""> -->
     </main>
 </template>
 <style lang="scss" scoped>
 main {
-    display: relative;
+    position: relative;
     width: 99%;
     height: 99vh;
     img{
@@ -16,8 +18,23 @@ main {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 100vh;
+        // 
     }
+    .whole_logo {
+      mask: linear-gradient(90deg, #000 0%, transparent 50%)
+    }
+}
+.whole_logo_mask_animation {
+  -webkit-animation: whole_logo_mask_animation 3s linear both;
+          animation: whole_logo_mask_animation 3s linear both;
+}
+@keyframes whole_logo_mask_animation {
+  0% {
+    mask: linear-gradient(90deg, #000 100%, transparent 50%);
+  }
+  100% {
+    mask: linear-gradient(90deg, #000 0%, transparent 50%);
+  }
 }
 
 .vibrate-1 {
