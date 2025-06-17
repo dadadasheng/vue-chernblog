@@ -1,28 +1,62 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 
+const is_logo_broken = ref(false);
+const is_animation_finished = ref(false);
+const click_broken_logo = () => {
+  if(is_animation_finished.value){
+    is_logo_broken.value = !is_logo_broken.value;
+  }
+};
+onMounted(() => {
+    const element: HTMLElement = document.getElementById('animatedElement') as HTMLElement;
+    element.addEventListener('animationend', () => {
+        is_animation_finished.value = true;
+    });
+});
 </script>
 <template>
-    <main class="" >
-        <img class="whole_logo" src="../assets/img/chernHao_blog_logo_4_whole.png" alt="">
-        <!-- <img src="../assets/img/chernHao_blog_logo_4_top.png" alt="">
-        <img src="../assets/img/chernHao_blog_logo_4_bottom.png" alt=""> -->
+  <!-- <header v-if="is_animation_finished">
+    <h1 class="text-center text-4xl font-bold text-white">Welcome to My Blog</h1>
+    <p class="text-center text-lg text-gray-300">Click the logo to toggle its state!</p>
+  </header> -->
+    <main @click="click_broken_logo" class="wobble-hor-bottom vibrate-1">
+        <img id="animatedElement" class="whole_logo whole_logo_mask_animation" src="../assets/img/chernHao_blog_logo_4_whole.png" alt="">
+        <img :class="{offset_top: is_logo_broken}" src="../assets/img/chernHao_blog_logo_4_top.png" alt="">
+        <img :class="{offset_bottom: is_logo_broken}" src="../assets/img/chernHao_blog_logo_4_bottom.png" alt="">
     </main>
 </template>
 <style lang="scss" scoped>
+header{
+  width: 100%;
+  height: 20vh;
+  text-align: center;
+}
 main {
     position: relative;
     width: 99%;
-    height: 99vh;
+    height: 100vh;
     img{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         // 
+        transition: top 0.5s, left 0.5s, transform 0.5s;
     }
     .whole_logo {
-      mask: linear-gradient(90deg, #000 0%, transparent 50%)
+      mask: linear-gradient(90deg, #000 100%)
     }
+}
+.offset_top {
+  top:40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.offset_bottom {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .whole_logo_mask_animation {
   -webkit-animation: whole_logo_mask_animation 3s linear both;
@@ -30,10 +64,38 @@ main {
 }
 @keyframes whole_logo_mask_animation {
   0% {
-    mask: linear-gradient(90deg, #000 100%, transparent 50%);
+    mask: linear-gradient(90deg, #000 100%);
+  }
+  10%{
+    mask: linear-gradient(90deg, #000 90%, transparent 90%);
+  }
+  20%{
+    mask: linear-gradient(90deg, #000 80%, transparent 80%);
+  }
+  30%{
+    mask: linear-gradient(90deg, #000 70%, transparent 70%);
+  }
+  40%{
+    mask: linear-gradient(90deg, #000 60%, transparent 60%);
+  }
+  50%{
+    mask: linear-gradient(90deg, #000 50%, transparent 50%);
+  }
+  60%{
+    mask: linear-gradient(90deg, #000 40%, transparent 40%);
+  }
+  70%{
+    mask: linear-gradient(90deg, #000 30%, transparent 30%);
+  }
+  80%{
+    mask: linear-gradient(90deg, #000 20%, transparent 20%);
+  }
+  90%{
+    mask: linear-gradient(90deg, #000 10%, transparent 10%);
   }
   100% {
-    mask: linear-gradient(90deg, #000 0%, transparent 50%);
+    mask: linear-gradient(90deg, #000 0%, transparent 0%);
+    display: none;
   }
 }
 
@@ -110,8 +172,8 @@ main {
 }
 
 .wobble-hor-bottom {
-	-webkit-animation: wobble-hor-bottom 0.8s 3 both;
-	        animation: wobble-hor-bottom 0.8s 3 both;
+	-webkit-animation: wobble-hor-bottom 0.5s 3 both;
+	        animation: wobble-hor-bottom 0.5s 3 both;
 }
 
 /* ----------------------------------------------
