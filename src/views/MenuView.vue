@@ -20,7 +20,18 @@ onMounted(() => {
     <h1 class="text-center text-4xl font-bold text-white">Welcome to My Blog</h1>
     <p class="text-center text-lg text-gray-300">Click the logo to toggle its state!</p>
   </header> -->
+  <header>
+      <div>
+          <h1 class="text-center text-4xl font-bold text-white">Welcome to My Blog</h1>
+          <p class="text-center text-lg text-gray-300">Click the logo to toggle its state!</p>
+      </div>
+  </header>
     <main @click="click_broken_logo" class="wobble-hor-bottom vibrate-1">
+      <div v-if="is_logo_broken" class="menu_content">
+        <p>
+          hello, this is a blog website developed by Chern.
+        </p>
+      </div>
         <img id="animatedElement" class="whole_logo whole_logo_mask_animation" src="../assets/img/chernHao_blog_logo_4_whole.png" alt="">
         <img :class="{offset_top: is_logo_broken}" src="../assets/img/chernHao_blog_logo_4_top.png" alt="">
         <img :class="{offset_bottom: is_logo_broken}" src="../assets/img/chernHao_blog_logo_4_bottom.png" alt="">
@@ -35,7 +46,7 @@ header{
 main {
     position: relative;
     width: 99%;
-    height: 100vh;
+    height: 80vh;
     img{
         position: absolute;
         top: 50%;
@@ -43,6 +54,20 @@ main {
         transform: translate(-50%, -50%);
         // 
         transition: top 0.5s, left 0.5s, transform 0.5s;
+    }
+    .menu_content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
     }
     .whole_logo {
       mask: linear-gradient(90deg, #000 100%)
