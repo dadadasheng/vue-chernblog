@@ -24,6 +24,30 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/EggView.vue'),
     },
+    {
+      path: '/magazine',
+      name: 'magazine',
+      // route level code-splitting
+      // this generates a separate chunk (Magazine.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/MagazineView.vue'),
+    },
+    {
+      path: '/design',
+      name: 'design',
+      // route level code-splitting
+      // this generates a separate chunk (DesignBlog.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/DesignBlogView.vue'),
+    },
+    {
+      path: '/coding',
+      name: 'coding',
+      // route level code-splitting
+      // this generates a separate chunk (CodingBlog.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CodingBlogView.vue'), 
+    }
   ],
 })
 

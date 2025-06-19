@@ -27,23 +27,23 @@ onMounted(() => {
       </div>
   </header>
     <main @click="click_broken_logo" class="wobble-hor-bottom vibrate-1">
-      <div v-if="is_logo_broken" class="menu_content">
-        <p class="menu_item">
-          杂志
-        </p>
-        <p  class="menu_item">
-          代码
-        </p>
-        <p  class="menu_item">
-          设计
-        </p>
-        <p  class="menu_item">
-          主页
-        </p>
-      </div>
         <img id="animatedElement" class="whole_logo whole_logo_mask_animation" src="../assets/img/chernHao_blog_logo_4_whole.png" alt="">
         <img :class="{offset_top: is_logo_broken}" src="../assets/img/chernHao_blog_logo_4_top.png" alt="">
         <img :class="{offset_bottom: is_logo_broken}" src="../assets/img/chernHao_blog_logo_4_bottom.png" alt="">
+      <div v-if="is_logo_broken" class="menu_content">
+        <p class="menu_item">
+          <RouterLink to="/magazine">杂志</RouterLink>
+        </p>
+        <p  class="menu_item">
+          <RouterLink to="/coding">编程</RouterLink>
+        </p>
+        <p  class="menu_item">
+          <RouterLink to="/design">杂志</RouterLink>
+        </p>
+        <p  class="menu_item">
+          <RouterLink to="/home">主页</RouterLink>
+        </p>
+      </div>      
     </main>
 </template>
 <style lang="scss" scoped>
@@ -72,7 +72,6 @@ main {
       transform: translate(-50%, -50%);
       width: 80%;
       height: 80%;
-      background-color: rgba(0, 0, 0, 0.5);
       color: white;
       display: flex;
       justify-content: center;
