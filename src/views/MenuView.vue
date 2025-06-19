@@ -28,8 +28,17 @@ onMounted(() => {
   </header>
     <main @click="click_broken_logo" class="wobble-hor-bottom vibrate-1">
       <div v-if="is_logo_broken" class="menu_content">
-        <p>
-          hello, this is a blog website developed by Chern.
+        <p class="menu_item">
+          杂志
+        </p>
+        <p  class="menu_item">
+          代码
+        </p>
+        <p  class="menu_item">
+          设计
+        </p>
+        <p  class="menu_item">
+          主页
         </p>
       </div>
         <img id="animatedElement" class="whole_logo whole_logo_mask_animation" src="../assets/img/chernHao_blog_logo_4_whole.png" alt="">
@@ -40,13 +49,14 @@ onMounted(() => {
 <style lang="scss" scoped>
 header{
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   text-align: center;
 }
 main {
     position: relative;
-    width: 99%;
+    width: 80%;
     height: 80vh;
+    margin: auto;
     img{
         position: absolute;
         top: 50%;
@@ -68,18 +78,26 @@ main {
       justify-content: center;
       align-items: center;
       font-size: 1.5rem;
+      column-gap: 10px;
+      .menu_item {
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
     }
     .whole_logo {
       mask: linear-gradient(90deg, #000 100%)
     }
 }
 .offset_top {
-  top:40%;
+  top:35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .offset_bottom {
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
