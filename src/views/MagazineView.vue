@@ -56,6 +56,22 @@ const brockenLogo = () => {
             </div>
         </div>
         <div class="magazine_list_container">
+            <div class="magazine_list_pagination_container">
+                <p class="magazine_list_tag_container">
+                    人物 | 事件 | 生活 | 交互
+                </p>
+                <div class="magazine_list_pagination_number_container">
+                    <div class="pagination_number">
+                        1
+                    </div>
+                    <div class="pagination_number active">
+                        2
+                    </div>
+                    <div class="pagination_number">
+                        3
+                    </div>
+                </div>
+            </div>
             <div class="magazine_card_container">
                 <div class="magazine_card_text_container">
                     <p class="magazine_card_date">2025-02-03</p>
@@ -124,10 +140,15 @@ const brockenLogo = () => {
 </template>
 <style lang="scss" scoped>
 header {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 10vh;
     text-align: center;
     display: flex;
+    z-index: 1000;
+    background-color: rgba(240, 248, 255, 0.288);
     .logo_container {
         width: 10%;
         height: 100%;
@@ -174,6 +195,7 @@ header {
 
 }
 main {
+    margin-top: 10vh;
     .introduction_container{
         position: relative;
         width: 100%;
@@ -235,6 +257,32 @@ main {
         width: 100%;
         height: 80vh;
         margin: auto;       
+        .magazine_list_pagination_container{
+            .magazine_list_tag_container{
+                text-align: center;
+                padding: 10px;
+            }
+            .magazine_list_pagination_number_container{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+                .pagination_number{
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    color: white;
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+                .active{
+                    border-style: solid;
+                    border-width: 1px;
+                }
+            }
+        }
         .magazine_card_container{
             width: 100%;
             height: 400px;
