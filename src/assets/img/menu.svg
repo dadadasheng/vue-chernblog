@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.87 31.46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c30d23;
+        stroke: #c30d23;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+      }
+
+      .cls-3 {
+        fill: #1d2088;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <ellipse class="cls-3" cx="11.94" cy="15.73" rx="11.94" ry="15.73"/>
+    <rect class="cls-3" x="5.52" y="10.52" width="4.75" height="4.75"/>
+    <rect class="cls-2" x="13.51" y="9.04" width="4.75" height="4.75"/>
+    <rect class="cls-1" x="5.52" y="9.04" width="4.75" height="4.75"/>
+    <rect class="cls-1" x="13.9" y="17.03" width="4.75" height="4.75"/>
+    <rect class="cls-2" x="5.92" y="17.03" width="4.75" height="4.75"/>
+  </g>
+</svg>

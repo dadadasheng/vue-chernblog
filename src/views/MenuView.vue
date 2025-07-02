@@ -41,7 +41,7 @@ onMounted(() => {
           <RouterLink to="/design">杂志</RouterLink>
         </p>
         <p  class="menu_item">
-          <RouterLink to="/home">主页</RouterLink>
+          <RouterLink to="/">主页</RouterLink>
         </p>
       </div>      
     </main>
